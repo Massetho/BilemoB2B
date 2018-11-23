@@ -26,6 +26,9 @@ final class CustomerUserCreationSubscriber implements EventSubscriberInterface
         $this->tokenStorage = $tokenStorage;
     }
 
+    /**
+     * @return array
+     */
     public static function getSubscribedEvents()
     {
         return [
@@ -33,6 +36,9 @@ final class CustomerUserCreationSubscriber implements EventSubscriberInterface
         ];
     }
 
+    /**
+     * @param GetResponseForControllerResultEvent $event
+     */
     public function handleUserCreation(GetResponseForControllerResultEvent $event)
     {
         $customerUser = $event->getControllerResult();

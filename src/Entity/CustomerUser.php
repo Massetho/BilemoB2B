@@ -41,6 +41,29 @@ class CustomerUser
     public $name;
 
     /**
+     * @var string $country
+     * @ORM\Column
+     * @Groups({"write", "detail"})
+     */
+    public $country;
+
+    /**
+     * @var string $town
+     * @ORM\Column
+     * @Groups({"write", "detail"})
+     */
+    public $town;
+
+    /**
+     * @var string $town
+     * @ORM\Column
+     * @Assert\NotBlank
+     * @Assert\Email
+     * @Groups({"write", "detail"})
+     */
+    public $email;
+
+    /**
      * @ORM\ManyToOne(targetEntity="User", inversedBy="customerUsers")
      * @ORM\JoinColumn(nullable=true)
      */
@@ -76,6 +99,54 @@ class CustomerUser
     public function setName(string $name): void
     {
         $this->name = $name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCountry(): string
+    {
+        return $this->country;
+    }
+
+    /**
+     * @param string $country
+     */
+    public function setCountry(string $country): void
+    {
+        $this->country = $country;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTown(): string
+    {
+        return $this->town;
+    }
+
+    /**
+     * @param string $town
+     */
+    public function setTown(string $town): void
+    {
+        $this->town = $town;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEmail(): string
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param string $email
+     */
+    public function setEmail(string $email): void
+    {
+        $this->email = $email;
     }
 
     /**
