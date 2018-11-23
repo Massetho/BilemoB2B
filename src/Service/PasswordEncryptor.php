@@ -30,7 +30,7 @@ class PasswordEncryptor
      */
     public function encodePassword(User $user)
     {
-        $password = $this->passwordEncoder->encodePassword($user, $user->getPlainPassword());
+        $password = $this->passwordEncoder->encodePassword($user, $user->getPassword());
         $user->setPassword($password);
     }
 }

@@ -14,12 +14,12 @@ use Symfony\Component\Serializer\Annotation\Groups;
  * @ApiResource(
  *     collectionOperations={
  *     "get"={"access_control"="is_granted('ROLE_SUPER_ADMIN')", "normalization_context"={"groups"={"list"}}},
- *     "post"={"access_control"="is_granted('ROLE_ADMIN')"}
+ *     "post"={"access_control"="is_granted('ROLE_SUPER_ADMIN')"}
  *     },
  *     itemOperations={
- *     "get"={"access_control"="(is_granted('ROLE_ADMIN') and object == user) or is_granted('ROLE_SUPER_ADMIN')", "normalization_context"={"groups"={"list", "detail"}}},
- *     "put"={"access_control"="(is_granted('ROLE_ADMIN') and object == user) or is_granted('ROLE_SUPER_ADMIN')"},
- *     "delete"={"access_control"="is_granted('ROLE_ADMIN')"}
+ *     "get"={"access_control"="is_granted('ROLE_SUPER_ADMIN')", "normalization_context"={"groups"={"list", "detail"}}},
+ *     "put"={"access_control"="(is_granted('ROLE_SUPER_ADMIN')"},
+ *     "delete"={"access_control"="is_granted('ROLE_SUPER_ADMIN')"}
  *     }
  * )
  * @ORM\Entity
