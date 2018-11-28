@@ -5,6 +5,7 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: 'en'
+    admin.mail: '%env(resolve:ADMIN_MAIL)%'
 
 services:
     # default configuration for services in *this* file
@@ -34,3 +35,7 @@ services:
             tags:
                 - { name: api_platform.doctrine.orm.query_extension.collection, priority: 9 }
                 - { name: api_platform.doctrine.orm.query_extension.item }
+
+    App\DataFixtures\UserFixture:
+        arguments:
+            $adminMail: '%admin.mail%'

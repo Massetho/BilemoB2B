@@ -31,7 +31,7 @@ class Product
     public $id;
 
     /**
-     * @var string $name A name property - this description will be available in the API documentation too.
+     * @var string $name Product name.
      *
      * @ORM\Column
      * @Assert\NotBlank
@@ -40,7 +40,7 @@ class Product
     public $name;
 
     /**
-     * @var string $name A name property - this description will be available in the API documentation too.
+     * @var string $name Product reference/SKU.
      *
      * @ORM\Column
      * @Assert\NotBlank
@@ -49,7 +49,7 @@ class Product
     public $reference;
 
     /**
-     * @var string $price A name property - this description will be available in the API documentation too.
+     * @var string $price Product price.
      *
      * @ORM\Column(type="float")
      * @Assert\NotBlank
@@ -59,7 +59,7 @@ class Product
 
 
     /**
-     * @var string $price A name property - this description will be available in the API documentation too.
+     * @var string $description A short description of the product.
      *
      * @ORM\Column
      * @Assert\Length(
@@ -70,5 +70,85 @@ class Product
      * @Groups({"detail", "write"})
      */
     public $description;
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName(string $name): void
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getReference(): string
+    {
+        return $this->reference;
+    }
+
+    /**
+     * @param string $reference
+     */
+    public function setReference(string $reference): void
+    {
+        $this->reference = $reference;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPrice(): string
+    {
+        return $this->price;
+    }
+
+    /**
+     * @param string $price
+     */
+    public function setPrice(string $price): void
+    {
+        $this->price = $price;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescription(): string
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param string $description
+     */
+    public function setDescription(string $description): void
+    {
+        $this->description = $description;
+    }
 
 }
