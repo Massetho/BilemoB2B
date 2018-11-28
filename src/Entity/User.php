@@ -37,7 +37,7 @@ class User implements UserInterface
     private $id;
 
     /**
-     * @var string $username A name property - this description will be available in the API documentation too.
+     * @var string $username User's username (needed).
      *
      * @ORM\Column
      * @Assert\NotBlank
@@ -46,7 +46,7 @@ class User implements UserInterface
     private $username;
 
     /**
-     * @var string $email
+     * @var string $email User's email (needed).
      *
      * @ORM\Column
      * @Assert\NotBlank
@@ -62,7 +62,7 @@ class User implements UserInterface
     private $roles;
 
     /**
-     * @var string $password
+     * @var string $password User's password (needed).
      * @ORM\Column(type="string", length=500)
      */
     private $password;
@@ -70,14 +70,10 @@ class User implements UserInterface
     /**
      * @var \DateTime $dateCreated
      * @ORM\Column(type="datetime", name="date_created")
+     * @Assert\NotBlank
      * @Groups("detail")
      */
     private $dateCreated;
-
-    /**
-     * @var string $plainPassword
-     */
-    private $plainPassword;
 
     /**
      * @ORM\OneToMany(targetEntity="CustomerUser", mappedBy="user", cascade={"persist"})
@@ -167,22 +163,6 @@ class User implements UserInterface
     public function setDateCreated(\DateTime $dateCreated): void
     {
         $this->dateCreated = $dateCreated;
-    }
-
-    /**
-     * @return string
-     */
-    public function getPlainPassword()
-    {
-        return $this->plainPassword;
-    }
-
-    /**
-     * @param string $plainPassword
-     */
-    public function setPlainPassword(string $plainPassword): void
-    {
-        $this->plainPassword = $plainPassword;
     }
 
     /**

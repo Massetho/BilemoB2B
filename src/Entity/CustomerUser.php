@@ -33,7 +33,7 @@ class CustomerUser
     public $id;
 
     /**
-     * @var string $name A name property - this description will be available in the API documentation too.
+     * @var string $name Customer name (needed).
      * @ORM\Column
      * @Assert\NotBlank
      * @Groups({"list", "write", "detail"})
@@ -41,21 +41,21 @@ class CustomerUser
     public $name;
 
     /**
-     * @var string $country
+     * @var string $country Customer country.
      * @ORM\Column
      * @Groups({"write", "detail"})
      */
     public $country;
 
     /**
-     * @var string $town
+     * @var string $town Customer town.
      * @ORM\Column
      * @Groups({"write", "detail"})
      */
     public $town;
 
     /**
-     * @var string $town
+     * @var string $email Customer Mail (needed).
      * @ORM\Column
      * @Assert\NotBlank
      * @Assert\Email

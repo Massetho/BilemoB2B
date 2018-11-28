@@ -31,7 +31,7 @@ class Product
     public $id;
 
     /**
-     * @var string $name A name property - this description will be available in the API documentation too.
+     * @var string $name Product name.
      *
      * @ORM\Column
      * @Assert\NotBlank
@@ -40,7 +40,7 @@ class Product
     public $name;
 
     /**
-     * @var string $name A name property - this description will be available in the API documentation too.
+     * @var string $name Product reference/SKU.
      *
      * @ORM\Column
      * @Assert\NotBlank
@@ -49,7 +49,7 @@ class Product
     public $reference;
 
     /**
-     * @var string $price A name property - this description will be available in the API documentation too.
+     * @var string $price Product price.
      *
      * @ORM\Column(type="float")
      * @Assert\NotBlank
@@ -59,7 +59,7 @@ class Product
 
 
     /**
-     * @var string $price A name property - this description will be available in the API documentation too.
+     * @var string $description A short description of the product.
      *
      * @ORM\Column
      * @Assert\Length(
