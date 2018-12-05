@@ -20,7 +20,6 @@ security:
         login:
             pattern:  ^/api/login
             stateless: true
-            anonymous: true
             provider: app_user_provider
             json_login:
                 check_path:               /api/login_check
@@ -31,6 +30,7 @@ security:
 
         api:
             pattern:   ^/api
+            anonymous: true
             stateless: true
             provider: app_user_provider
             guard:
@@ -49,6 +49,7 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
+        - { path: ^/api/docs, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/api/login_check, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/api/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/api,       roles: ROLE_ADMIN }
