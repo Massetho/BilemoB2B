@@ -48,6 +48,9 @@ The default account have the following credentials :
   - **Email** : the email address provided by you in the *ADMIN_MAIL* environment constant.
   - **Password** : "*pass1234*"
 
+## Documentation
+  [Complete documentation.](https://undefined.api-docs.io/0.0.0/api/)
+  
 ## Built with
   - [Symfony 4](https://symfony.com/) - PHP framework
   - [API Platform](https://api-platform.com/) - REST & GraphQL framework
